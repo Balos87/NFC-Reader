@@ -62,6 +62,8 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
+		<PackageReference Include="Plugin.NFC" Version="0.1.26" />
+		<PackageReference Include="Tesseract" Version="5.2.0" />
 	</ItemGroup>
 
 </Project>

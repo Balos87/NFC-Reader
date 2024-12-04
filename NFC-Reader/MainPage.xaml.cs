@@ -20,6 +20,11 @@
 
             SemanticScreenReader.Announce(CounterBtn.Text);
         }
+
+        private void ScanBtn_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("NFC title", "NFC data content", "Close");
+        }
     }
 
 }

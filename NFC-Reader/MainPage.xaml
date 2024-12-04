@@ -29,7 +29,14 @@
                 Text="Click me" 
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
-                HorizontalOptions="Fill" />
+                HorizontalOptions="Center" />
+            <Button
+                x:Name="ScanBtn"
+                Text="Scan NFC"
+                SemanticProperties.Hint="Click to activate scanning for NFC"
+                Clicked="ScanBtn_Clicked"
+                HorizontalOptions="Center"
+                />
         </VerticalStackLayout>
     </ScrollView>
 

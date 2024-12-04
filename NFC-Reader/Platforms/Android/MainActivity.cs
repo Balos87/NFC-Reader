@@ -1,4 +1,5 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.OS;
 using Plugin.NFC;
@@ -10,10 +11,24 @@ namespace NFC_Reader
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            // initializing NFC-plugin to make sure its runs before base.OnCreate
+            // Initiera NFC-pluginet (viktigt innan base.OnCreate)
             CrossNFC.Init(this);
-
             base.OnCreate(savedInstanceState);
         }
+
+        protected override void OnResume()
+        {
+            base.OnResume();
+            // Återstarta NFC-lyssning (för Android 10+)
+            CrossNFC.OnResume();
+        }
+
+        protected override void OnNewIntent(Intent intent)
+        {
+            base.OnNewIntent(intent);
+            // Hantera NFC-taggupptäckt
+            CrossNFC.OnNewIntent(intent);
+        }
+
     }
 }
